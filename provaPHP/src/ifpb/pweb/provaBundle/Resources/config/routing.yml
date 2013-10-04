@@ -1,0 +1,18 @@
+provaBundle_homepage:
+    pattern:  /
+    defaults: { _controller: provaBundle:public:index }
+provaBundle_cria_root:
+    pattern:  /criar-admin
+    defaults: { _controller: provaBundle:public:criarAdmin }
+provaBundle_admin_form_login:
+    pattern:  /admin
+    defaults: { _controller: provaBundle:public:formLogin }
+provaBundle_admin_login:
+    pattern:  /admin/login
+    defaults: { _controller: provaBundle:public:login }
+provaBundle_admin_logout:
+    pattern:  /admin/logout
+    defaults: { _controller: provaBundle:public:logout }
+provaBundle_crud:
+        resource: "@provaBundle/Resources/config/routing/usuario.yml"
+        prefix:   /admin/crud

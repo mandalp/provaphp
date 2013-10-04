@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        {% block metadados %}{% endblock %} 
+        <title>{% block title %}Painel administrativo{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}   
+        <style type="text/css">
+        	p#menu_up{
+        		background-color: #ccc;
+        		width:98%;
+        		height:25px;
+        		padding:5px 0px 0px 20px;
+        		-moz-box-shadow: 5px 5px 20px #000;
+				-webkit-box-shadow: 5px 5px 20px #000;
+				box-shadow: 1px 1px 10px #000;
+        	}
+       	.records_list{
+				margin:auto;
+				border:solid 2px #1C6FBB;
+			}
+       		
+        </style> 
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+    	<p id="menu_up"> 
+    		<span>Olá {{ usuarioLogado }}</span>    &nbsp; | &nbsp;  		
+	    	<a href="{{ path('provaBundle_admin_logout') }}">Sair</a>
+    	</p>
+    	
+    	<hr />
+    	
+        {% block body %}{% endblock %}        
+    </body>
+</html>

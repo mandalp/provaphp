@@ -1,0 +1,30 @@
+crud:
+    pattern:  /
+    defaults: { _controller: "provaBundle:Usuario:index" }
+
+crud_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "provaBundle:Usuario:show" }
+
+crud_new:
+    pattern:  /new
+    defaults: { _controller: "provaBundle:Usuario:new" }
+
+crud_create:
+    pattern:  /create
+    defaults: { _controller: "provaBundle:Usuario:create" }
+    requirements: { _method: post }
+
+crud_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "provaBundle:Usuario:edit" }
+
+crud_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "provaBundle:Usuario:update" }
+    requirements: { _method: post|put }
+
+crud_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "provaBundle:Usuario:delete" }
+    requirements: { _method: post|delete }

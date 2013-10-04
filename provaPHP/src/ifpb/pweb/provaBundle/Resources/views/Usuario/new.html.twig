@@ -1,0 +1,52 @@
+{% extends '::base-logado.html.twig' %}
+
+{% block body -%}
+    <h1>Criar Usuário</h1>
+	
+    <form action="{{ path('crud_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+        
+        <div>
+	        {{ form_label(form.nome) }}
+	        {{ form_errors(form.nome) }}
+	        {{ form_widget(form.nome) }}
+        </div>
+        
+         <div>
+	        {{ form_label(form.telefone) }}
+	        {{ form_errors(form.telefone) }}
+	        {{ form_widget(form.telefone) }}
+        </div>
+        
+        <div>
+	        {{ form_label(form.email) }}
+	        {{ form_errors(form.email) }}
+	        {{ form_widget(form.email) }}
+        </div>
+        
+        <div>
+	        {{ form_label(form.senha) }}
+	        {{ form_errors(form.senha) }}
+	        {{ form_widget(form.senha) }}
+        </div>               
+        
+        <div>
+	        {{ form_label(form.privilegio) }}
+	        {{ form_errors(form.privilegio) }}
+	        {{ form_widget(form.privilegio) }}
+        </div>
+                              
+        {{ form_row(form._token) }}
+        <p>
+            <button type="submit">Criar</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('crud') }}">
+            Volte para a lista
+        </a>
+    </li>
+</ul>
+{% endblock %}

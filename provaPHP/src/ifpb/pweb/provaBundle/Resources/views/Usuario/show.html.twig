@@ -1,0 +1,54 @@
+{% extends '::base-logado.html.twig' %}
+
+{% block body -%}
+    <h1>Usuário</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ entity.nome }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Senha</th>
+                <td>{{ entity.senha }}</td>
+            </tr>
+            <tr>
+                <th>Privilerio</th>
+                <td>{{ entity.privilegio }}</td>
+            </tr>
+            <tr>
+                <th>Telefone</th>
+                <td>{{ entity.telefone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('crud') }}">
+            Volte para a lista
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('crud_edit', { 'id': entity.id }) }}">
+            Editar
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('crud_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

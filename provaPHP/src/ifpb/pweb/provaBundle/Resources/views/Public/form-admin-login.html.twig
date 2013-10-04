@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+ 
+
+{% block body %}
+			
+	<div style="float:right">
+		<p><a href="{{ path('provaBundle_cria_root') }}">Criar usuário root</a></p>
+	</div>
+		
+	<div id="login">
+		<h3>Login</h3>	
+		
+		<form method="post" action="{{ path('provaBundle_admin_login') }}">
+			<label>Usu&aacute;rio:</label><br />
+			<input type="text" size="20" name="fm_login_email" />
+			<br /><br />
+			
+			<label>Senha:</label><br />
+			<input type="password" size="20" name="fm_login_senha" />
+			<br /><br />
+			
+			<input type="submit" name="fm_submit_login" value="Entrar"/>
+			
+		</form>					
+	</div>
+	
+	<div>
+		<p><a href="{{ path('provaBundle_homepage') }}">Voltar a página inicial</a></p>
+	</div>
+		
+
+{% endblock %} 

@@ -1,0 +1,62 @@
+{% extends '::base-logado.html.twig' %}
+
+{% block body -%}
+    <h1>Editar Usuário</h1>
+
+    <form action="{{ path('crud_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+        <input type="hidden" name="_method" value="PUT" />
+        
+        {{ form_errors(edit_form) }}
+        
+        <div>
+	        {{ form_label(edit_form.nome) }}
+	        {{ form_errors(edit_form.nome) }}
+	        {{ form_widget(edit_form.nome) }}
+        </div>
+        
+         <div>
+	        {{ form_label(edit_form.telefone) }}
+	        {{ form_errors(edit_form.telefone) }}
+	        {{ form_widget(edit_form.telefone) }}
+        </div>
+        
+        <div>
+	        {{ form_label(edit_form.email) }}
+	        {{ form_errors(edit_form.email) }}
+	        {{ form_widget(edit_form.email) }}
+        </div>
+        
+        <div>
+	        {{ form_label(edit_form.senha) }}
+	        {{ form_errors(edit_form.senha) }}
+	        {{ form_widget(edit_form.senha) }}
+        </div>               
+        
+        <div>
+	        {{ form_label(edit_form.privilegio) }}
+	        {{ form_errors(edit_form.privilegio) }}
+	        {{ form_widget(edit_form.privilegio) }}
+        </div>
+                              
+        {{ form_row(edit_form._token) }}
+        
+        <p>
+            <button type="submit">Salvar</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('crud') }}">
+           Volte para a lista
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('crud_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

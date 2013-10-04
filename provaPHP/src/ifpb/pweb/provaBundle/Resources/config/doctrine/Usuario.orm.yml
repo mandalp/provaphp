@@ -1,0 +1,26 @@
+ifpb\pweb\provaBundle\Entity\Usuario:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nome:
+            type: string
+            length: '20'
+        email:
+            type: string
+            length: '50'
+        senha:
+            type: string
+            length: '64'
+        privilegio:
+            type: string
+            length: '10'
+        telefone:
+            type: string
+            length: '16'
+    lifecycleCallbacks: {  }

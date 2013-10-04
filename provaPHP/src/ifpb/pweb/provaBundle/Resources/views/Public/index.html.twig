@@ -1,0 +1,40 @@
+ {% extends '::base.html.twig' %}
+ 
+ {% block body -%}
+ <p><a href="{{ path('provaBundle_admin_form_login') }}">Painel administrativo</a></p>
+ <h2>Usuários</h2>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Privilerio</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in entidades %}
+            <tr>
+                <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.privilegio }}</td>
+                <td>{{ usuario.telefone }}</td>               
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ 
+ {% endblock %}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

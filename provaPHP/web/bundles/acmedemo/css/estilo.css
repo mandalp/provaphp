@@ -1,0 +1,9 @@
+body {
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+.records_list{
+	margin:auto;
+	border:solid 2px #1C6FBB;
+
+}

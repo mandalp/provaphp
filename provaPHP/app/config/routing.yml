@@ -1,0 +1,4 @@
+prova:
+    resource: "@provaBundle/Resources/config/routing.yml"
+    prefix:   /prova
+
